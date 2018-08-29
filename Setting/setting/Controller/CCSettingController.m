@@ -44,7 +44,7 @@
     [super didReceiveMemoryWarning];
 }
 
-
+#pragma mark ------ UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.sections.count;
 }
@@ -60,10 +60,6 @@
     CCSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([CCSettingCell class]) forIndexPath:indexPath];
     cell.item = item;
     
-    cell.textLabel.font = [UIFont systemFontOfSize:15];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:15];
-    
-
     
     return cell;
 }
@@ -92,12 +88,17 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 49;
+    return 44;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     CCSection *sectionModel = self.sections[section];
     UIView *view  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionModel.headerHeight)];
+    return view;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    CCSection *sectionModel = self.sections[section];
+    UIView *view  = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, sectionModel.footerHeight)];
     return view;
 }
 

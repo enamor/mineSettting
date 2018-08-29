@@ -59,9 +59,9 @@
     }
 
     //bottomLine
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 1, CCScreenWidth, 1)];
-    line.backgroundColor = CCMakeColorWithRGB(234, 234, 234, 1);
-    [self.contentView addSubview:line];
+//    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, self.height - 1, CCScreenWidth, 1)];
+//    line.backgroundColor = CCMakeColorWithRGB(234, 234, 234, 1);
+//    [self.contentView addSubview:line];
     
 }
 
